@@ -72,7 +72,7 @@ Website ini dirancang untuk membantu memahami konsep dan simulasi berbagai tekni
 <div class="about-left">
 <div class="image-wrapper-new">
 <img
-src="foto-profil.jpg"
+src="IMG_8738.jpg"
 alt="Foto Profil Muhammad Fatan Makhsani"
 class="profile-pic-new"
 />
@@ -169,7 +169,85 @@ Latihan Keterampilan Manajemen Mahasiswa Tingkat Menengah
 </li>
 </ul>
 </div>
+
+<!-- ===== BAGIAN KONTAK & PETA (BARU) ===== -->
+<div class="contact-section-new">
+<h3>Kontak & Lokasi</h3>
+<p class="contact-address">
+Lab. Human Centric Multimedia, Gedung Pasca Sarjana Lt. 9 (PS.09-03), Kampus PENS Sukolilo, Surabaya
+</p>
+
+<!-- Container untuk layout 2 kolom -->
+<div class="contact-layout-container">
+<!-- Kolom Kiri: Peta -->
+<div class="contact-left">
+<div class="map-container">
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.695781373507!2d112.79165631477498!3d-7.2750959947477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa100cce373f%3A0x203d7c30f00f0724!2sPoliteknik%20Elektronika%20Negeri%20Surabaya%20(PENS)!5e0!3m2!1sen!2sid!4v1731817450821"
+width="100%"
+height="100%"
+style="border: 0"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+></iframe>
 </div>
+</div>
+<!-- Kolom Kanan: Formulir Kontak -->
+<div class="contact-right">
+<h4 class="contact-form-title">Hubungi Saya</h4>
+<!-- 
+TIP: Untuk membuat form ini berfungsi, ganti 'YOUR_ID' 
+dengan ID unik Anda dari https://formspree.io/ 
+-->
+<form
+class="contact-form"
+action="https://formspree.io/f/YOUR_ID"
+method="POST"
+>
+<label for="form-nama">Nama</label>
+<input
+type="text"
+id="form-nama"
+name="Nama"
+placeholder="Nama Anda"
+required
+/>
+
+<label for="form-email">Email</label>
+<input
+type="email"
+id="form-email"
+name="Email"
+placeholder="Email Anda"
+required
+/>
+
+<label for="form-telepon">Nomor Telepon (Opsional)</label>
+<input
+type="tel"
+id="form-telepon"
+name="Telepon"
+placeholder="Nomor HP Anda"
+/>
+
+<label for="form-pesan">Pesan</label>
+<textarea
+id="form-pesan"
+name="Pesan"
+rows="5"
+placeholder="Tulis pesan Anda di sini..."
+required
+></textarea>
+
+<button type="submit" class="btn-gradient">Kirim Pesan</button>
+</form>
+</div>
+</div>
+</div>
+<!-- ===== AKHIR BAGIAN KONTAK ===== -->
+</div>
+<!-- AKHIR DARI "page-about" -->
 
 <!-- Page: Hash (Struktur tetap, gaya diubah di CSS) -->
 <div id="page-hash" class="page">
@@ -258,7 +336,7 @@ Generate Key Pair
 <input id="amount-B" type="number" min="1" value="10" />
 <button id="send-B">Kirim</button>
 </div>
-<div class="wallet" data-user="C">
+<div class="wallet" data-user-C">
 <h3>User C</h3>
 <div>Saldo: <span id="saldo-C">100</span></div>
 <label>Penerima:</label>
@@ -321,5 +399,4 @@ Website:
 <!-- Menggunakan file app.js (TIDAK BERUBAH) -->
 <script src="app.js"></script>
 </body>
-
 </html>
