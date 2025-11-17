@@ -1,0 +1,504 @@
+/* ================================== */
+/* DESAIN BARU V2             */
+/* ================================== */
+
+/* 1. SETUP & VARIABEL */
+:root {
+  --bg-dark: #0F051D; /* Latar belakang utama (sangat gelap) */
+  --bg-container: #1A0A33; /* Latar belakang container (gelap ungu) */
+  --primary-purple: #7A42F4;
+  --primary-pink: #D63384;
+  --text-light: #F0F0F0;
+  --text-dark: #B0B0B0;
+  --border-color: #3B1F70;
+  --font-main: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+a {
+  color: var(--primary-purple);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primary-pink);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+/* 2. NAVBAR (HORIZONTAL BARU) */
+.navbar {
+  display: flex;
+  background: var(--bg-container);
+  padding: 0 10px;
+  border-bottom: 1px solid var(--border-color);
+  /* Membuat navbar bisa di-scroll horizontal di layar kecil */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.navbar button {
+  flex: 1 1 auto; /* Izinkan tombol menyusut/tumbuh */
+  min-width: 100px; /* Lebar minimum per tombol */
+  padding: 18px 15px;
+  color: var(--text-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: var(--font-main);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar button:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar button.active {
+  color: var(--text-light);
+  border-bottom: 3px solid var(--primary-purple);
+}
+
+/* 3. LAYOUT HALAMAN UTAMA */
+.main-content {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+  background: var(--bg-container);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.page.active {
+  display: block;
+}
+
+/* 4. HALAMAN BARU "ABOUT ME" (SESUAI REFERENSI) */
+.about-new-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Kolom Kiri: Foto */
+.about-left {
+  flex-basis: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper-new {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 6px; /* Ketebalan glow */
+  background: linear-gradient(
+    45deg,
+    var(--primary-purple),
+    var(--primary-pink)
+  );
+  animation: rotateGlow 5s linear infinite;
+}
+
+.profile-pic-new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg-container);
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Kolom Kanan: Teks */
+.about-right {
+  flex-basis: 65%;
+}
+
+.about-name {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.about-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 500;
+  color: var(--primary-purple);
+  margin-bottom: 20px;
+}
+
+.about-description {
+  font-size: 1rem; /* 16px */
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.social-icons a {
+  color: var(--text-dark);
+  font-size: 1.5rem; /* 24px */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary-purple);
+  transform: scale(1.2);
+}
+
+/* Tombol Gradien */
+.btn-gradient {
+  display: inline-block;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--primary-purple),
+    var(--primary-pink)
+  );
+  background-size: 200% 100%;
+  cursor: pointer;
+  transition: background-position 0.4s ease;
+}
+
+.btn-gradient:hover {
+  background-position: 100% 0;
+  color: white;
+}
+
+/* CV Detail (di bawah layout utama) */
+.cv-section-new {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+.cv-section-new h3 {
+  color: var(--primary-purple);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.cv-section-new ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+.cv-section-new li {
+  margin-bottom: 15px;
+}
+.cv-section-new li p {
+  margin-top: 5px;
+  font-size: 0.95em;
+}
+
+/* 5. GAYA UMUM UNTUK SEMUA HALAMAN (TERMASUK BLOCKCHAIN) */
+
+/* Home */
+#datetime {
+  color: var(--primary-purple);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+.petunjuk {
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+}
+.petunjuk li {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.petunjuk strong {
+  color: var(--text-light);
+}
+
+/* Elemen Form */
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+textarea,
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  font-size: 14px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(122, 66, 244, 0.3);
+}
+
+/* Output Display */
+.output {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  font-family: monospace; /* Font mono untuk hash */
+  font-size: 14px;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  min-height: 42px; /* Samakan tinggi dengan input */
+  word-break: break-all;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+}
+
+/* Tombol (Umum & Blockchain) */
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-weight: 600;
+}
+
+/* Tombol Gradien (dipakai di banyak tempat) */
+.mine,
+#btn-add-block,
+#btn-mine-all,
+#btn-verify-consensus,
+#btn-consensus,
+#send-A, #send-B, #send-C,
+.btn-gradient { /* Terapkan gaya yg sama */
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    var(--primary-purple),
+    var(--primary-pink)
+  );
+  background-size: 200% 100%;
+  transition: background-position 0.4s ease;
+}
+
+.mine:hover,
+#btn-add-block:hover,
+#btn-mine-all:hover,
+#btn-verify-consensus:hover,
+#btn-consensus:hover,
+#send-A:hover, #send-B:hover, #send-C:hover,
+.btn-gradient:hover {
+  background-position: 100% 0;
+  color: white; /* Pastikan teks tetap putih */
+}
+
+/* Tombol Khusus (jika perlu) */
+#btn-verify-consensus {
+  background: linear-gradient(90deg, #D63384, #FF69B4);
+}
+#btn-consensus {
+  background: linear-gradient(90deg, #33A1D6, #33D6B4);
+}
+
+
+/* 6. PENYESUAIAN HALAMAN BLOCKCHAIN */
+
+/* Page Block */
+#mining-status {
+  margin-top: 15px;
+  color: var(--primary-purple);
+}
+
+/* Page Block Chain */
+.chain-container {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  gap: 15px;
+}
+
+.blockchain-block {
+  flex: 0 0 280px; /* Lebar tetap 280px */
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+/* Page Konsensus */
+.wallets {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Bungkus jika layar kecil */
+}
+
+.wallet {
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  flex: 1;
+  min-width: 250px; /* Lebar minimum */
+  border-radius: 8px;
+  background-color: var(--bg-dark);
+}
+
+.chain-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  overflow-x: auto; /* Scroll jika banyak block */
+}
+
+.chain-block {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 8px;
+  width: 220px;
+  flex-shrink: 0; /* Jangan menyusut */
+  background: var(--bg-dark);
+  font-size: 0.9em;
+}
+
+.chain-block.invalid {
+  background: #3d0f0f;
+  border-color: #a02020;
+}
+.chain-block .small {
+  font-size: 0.9em;
+  color: var(--text-dark);
+}
+.chain-block input,
+.chain-block textarea {
+  font-size: 0.9em;
+  padding: 5px;
+}
+
+/* 7. FOOTER */
+footer {
+  background-color: var(--bg-container);
+  color: var(--text-dark);
+  padding: 30px 15px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  height: 40px;
+  opacity: 0.7;
+}
+.footer-links p {
+  margin: 5px 0;
+  text-align: center;
+}
+.footer-links a {
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: var(--primary-purple);
+}
+
+/* 8. RESPONSIF (SEDERHANA) */
+@media (max-width: 768px) {
+  /* Ubah layout about me jadi tumpuk */
+  .about-new-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-left {
+    margin-bottom: 20px;
+  }
+  .image-wrapper-new {
+    width: 200px;
+    height: 200px;
+  }
+  .about-name {
+    font-size: 2rem;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  
+  /* Tumpuk wallet di konsensus */
+  .wallets {
+    flex-direction: column;
+  }
+}

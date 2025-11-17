@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- Tambahkan Viewport untuk responsif -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blockchain Simulator - Fatan Makhsani</title>
+
+<!-- LINK FONT BARU (DARI REFERENSI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet"
+/>
+
+<!-- LINK IKON BARU (UNTUK SOSIAL MEDIA) -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<!-- Menggunakan file style.css -->
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Navbar (Struktur tetap, gaya diubah di CSS) -->
+<div class="navbar">
+<button id="tab-home" class="active">Home</button>
+<button id="tab-about">About Me</button>
+<button id="tab-hash">Hash</button>
+<button id="tab-block">Block</button>
+<button id="tab-chain">Block Chain</button>
+<button id="tab-ecc">ECC Signature</button>
+<button id="tab-consensus">Konsensus</button>
+</div>
+
+<!-- Container untuk semua halaman (membantu layout) -->
+<div class="main-content">
+<!-- Page: Home (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-home" class="page active">
+<h2>Selamat datang di Website Belajar Blockchain</h2>
+<div id="datetime"></div>
+<div class="petunjuk">
+<h3>Petunjuk Penggunaan</h3>
+<p>
+Website ini dirancang untuk membantu memahami konsep dan simulasi berbagai teknik dalam **Blockchain Technology**. Ikuti langkah-langkah berikut:
+</p>
+<!-- ... sisa konten home ... -->
+<ul>
+<li>Klik pada bagian <strong>Menu Bar</strong> di bagian atas untuk memilih simulasi atau fitur yang ingin dipelajari.</li>
+<li>Menu Bar yang tersedia:
+<ol>
+<li><strong>Home:</strong> Tampilan awal Website.</li>
+<li><strong>About Me:</strong> Profil pembuat Website.</li>
+<li><strong>Hash:</strong> Masukkan input teks pada area Text Input, lalu hasil SHA-256 Hash akan muncul otomatis setiap kali teks diubah.</li>
+<li><strong>Block:</strong> Anda dapat mengganti nomor blok, memberi input data, serta mengatur kecepatan mining. Tekan tombol Mine untuk memulai proses mining. Setelah menemukan hash dengan 4 angka nol di awal, nilai Nonce, Timestamp, dan Hash Block akan muncul.</li>
+<li><strong>Block Chain:</strong> Masukkan data, tekan Mine, lalu Add Block untuk menambah blok baru. Perhatikan bahwa Previous Hash pada blok baru sama dengan hash blok sebelumya.</li>
+<li><strong>ECC Signature:</strong> Klik Generate Key Pair untuk membuat Public Key dan Private Key. Tulis pesan dan tekan Sign Message untuk menghasilkan signature. Gunakan Verify Signature untuk memeriksa validitas signature.</li>
+<li><strong>Konsensus:</strong> Simulasi dengan 3 user (saldo awal 100 koin). Buat transaksi, kirim, lalu tekan Mine Semua Transaksi untuk membuat blok baru. Jika data diubah secara manual dan tombol Verify ditekan, maka blok yang datanya diubah akan menjadi merah muda (invalid). Tekan tombol Consensus untuk memperbaikinya dengan mekanisme konsensus.</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- HALAMAN ABOUT ME (DIRUBAH TOTAL SESUAI REFERENSI) -->
+<div id="page-about" class="page">
+<!-- Layout baru sesuai referensi -->
+<div class="about-new-container">
+<!-- Kolom Kiri: Foto -->
+<div class="about-left">
+<div class="image-wrapper-new">
+<img
+src="IMG_8738.jpg"
+alt="Foto Profil Muhammad Fatan Makhsani"
+class="profile-pic-new"
+/>
+</div>
+</div>
+<!-- Kolom Kanan: Teks & CV -->
+<div class="about-right">
+<h1 class="about-name">Muhammad Fatan Makhsani</h1>
+<p class="about-title">
+Mahasiswa Teknologi Rekayasa Multimedia
+</p>
+<p class="about-description">
+Mahasiswa TRM semester 5 dengan fokus pada pengembangan solusi digital dan inovasi industri kreatif. Memiliki keahlian teknis di bidang Programming, 3D Design, Video Mapping, dan familiar dengan UI/UX.
+</p>
+<!-- Ikon Sosial Media -->
+<div class="social-icons">
+<a href="https://github.com/Tanzhydra" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/fatan-makhsani-5a1538312" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.instagram.com/makhsniii_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
+<!-- Tombol CV (placeholder) -->
+<a href="1.png" target="_blank" class="btn-gradient">Lihat CV</a>
+</div>
+</div>
+
+<!-- Konten CV detail tetap ada di bawah -->
+<div class="cv-section-new">
+<h3>Pendidikan</h3>
+<ul>
+<li>
+<strong>Politeknik Elektronika Negeri Surabaya (PENS)</strong>
+- D4 Teknologi Rekayasa Multimedia (2023 – Sekarang)
+</li>
+<li><strong>SMA N 1 Purwokerto</strong> (2020-2023)</li>
+</ul>
+
+<h3>Keahlian Utama</h3>
+<ul>
+<li>
+<strong>Pemograman:</strong> Dasar C++,C. Familiar dengan Python, JavaScript, CSS
+</li>
+<li>
+<strong>Desain 3D:</strong> Modeling, Texturing, software: Blender
+</li>
+<li>
+<strong>Multimedia:</strong> Video Mapping, Post-Production, dan Editing, software:
+Resolume, AI, Capcut
+</li>
+<li><strong>XR Development:</strong> software: Unity</li>
+<li>
+<strong>Problem Solving & Analisis:</strong> Efisien.
+</li>
+<li>
+<strong>Kerja Sama Tim:</strong> Pengalaman aktif dalam organisasi.
+</li>
+</ul>
+
+<h3>Pengalaman</h3>
+<ul>
+<li>
+<strong>Asisten Laboratorium Proodi (2023 – sekarang)</strong>
+<p>Bertanggung jawab mendata, menjaga, dan memelihara alat praktikum serta membantu kegiatan pembelajaran.</p>
+</li>
+<li>
+<strong>Departemen PSDM - Hima MMB (2025)</strong>
+<p>
+Membangun kemampuan Kerja Sama Tim dan Problem Solving sebagai Ketua Pelaksana Orientasi prodi.
+</p>
+</li>
+<li>
+<strong>Wakil Ketua II Forum Anak Banyumas - Purwokerto (2025)</strong>
+<p>
+Mengasah kemahiran public speaking dan koordinasi tim yang efektif.
+</p>
+</li>
+<li>
+<strong>Immersive Fiesta - Tim Video Mapping (2025)</strong>
+<p>
+Berpartisipasi aktif sebagai Main Visual Jockey (VJ) dan Koordinator Teknis Venue.
+</p>
+</li>
+<li>
+<strong>Tim Ekvimp - Innoworks (2025)</strong>
+<p>
+Berperan sebagai 3D Designer, Game Developer, dan Tim Presentasi. Meraih Juara 3 dalam kompetisi pengembangan karya interaktif Efortech.
+</p>
+</li>
+</ul>
+
+<h3>Pelatihan & Sertifikasi</h3>
+<ul>
+<li>
+Latihan Keterampilan Manajemen Mahasiswa Tingkat Menengah
+</li>
+</ul>
+</div>
+</div>
+
+<!-- Page: Hash (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-hash" class="page">
+<h2>Hash Generator</h2>
+<label for="hash-input">Text Input:</label>
+<textarea id="hash-input" rows="4"></textarea>
+<label>SHA-256 Hash:</label>
+<div id="hash-output" class="output"></div>
+</div>
+<!-- Page: Single Block (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-block" class="page">
+<h2>Single Block</h2>
+<label for="block-number"># (Nomor Block):</label>
+<input id="block-number" type="number" min="0" value="0" />
+<label for="block-data">Data:</label>
+<textarea id="block-data" rows="4"></textarea>
+<label for="block-nonce">Nonce:</label>
+<input id="block-nonce" type="text" maxlength="9" />
+<label for="block-timestamp">Timestamp:</label>
+<input id="block-timestamp" type="text" readonly />
+<label>Hash:</label>
+<div id="block-hash" class="output"></div>
+<button id="btn-mine" class="mine">Mine</button>
+<label for="speed-control">Kecepatan Mining:</label>
+<select id="speed-control">
+<option value="1">Normal</option>
+<option value="10">10x Lebih Cepat</option>
+<option value="50">50x Lebih Cepat</option>
+</select>
+<div id="mining-status" class="status"></div>
+</div>
+<!-- Page: Block Chain (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-chain" class="page">
+<h2>Blockchain</h2>
+<div id="blockchain" class="chain-container"></div>
+<div class="chain-controls">
+<button id="btn-add-block">Add Block</button>
+</div>
+</div>
+<!-- Page ECC Signature (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-ecc" class="page">
+<h2>Verifikasi ECC Digital Signature</h2>
+<button id="btn-generate-key" class="btn-gradient">
+Generate Key Pair
+</button>
+<p>Public Key dan Private Key dapat diedit untuk percobaan.</p>
+<label>Public Key:</label>
+<textarea id="ecc-public" rows="3"></textarea>
+<label>Private Key:</label>
+<textarea id="ecc-private" rows="3"></textarea>
+<hr />
+<label>Pesan yang akan ditandatangani:</label>
+<textarea id="ecc-message" rows="3"></textarea>
+<button id="btn-sign" class="btn-gradient">Sign Message</button>
+<label>Hasil Signature (DER hex):</label>
+<textarea id="ecc-signature" rows="3" readonly></textarea>
+<hr />
+<button id="btn-verify" class="btn-gradient">Verify Signature</button>
+<div id="ecc-verify-result" class="output"></div>
+</div>
+<!-- Page Konsensus (Struktur tetap, gaya diubah di CSS) -->
+<div id="page-consensus" class="page">
+<h2>Simulasi Konsensus</h2>
+<div class="wallets">
+<div class="wallet" data-user="A">
+<h3>User A</h3>
+<div>Saldo: <span id="saldo-A">100</span></div>
+<label>Penerima:</label>
+<select id="receiver-A">
+<option value="B">User B</option>
+<option value="C">User C</option>
+</select>
+<label>Jumlah:</label>
+<input id="amount-A" type="number" min="1" value="10" />
+<button id="send-A">Kirim</button>
+</div>
+<div class="wallet" data-user="B">
+<h3>User B</h3>
+<div>Saldo: <span id="saldo-B">100</span></div>
+<label>Penerima:</label>
+<select id="receiver-B">
+<option value="A">User A</option>
+<option value="C">User C</option>
+</select>
+<label>Jumlah:</label>
+<input id="amount-B" type="number" min="1" value="10" />
+<button id="send-B">Kirim</button>
+</div>
+<div class="wallet" data-user="C">
+<h3>User C</h3>
+<div>Saldo: <span id="saldo-C">100</span></div>
+<label>Penerima:</label>
+<select id="receiver-C">
+<option value="A">User A</option>
+<option value="B">User B</option>
+</select>
+<label>Jumlah:</label>
+<input id="amount-C" type="number" min="1" value="10" />
+<button id="send-C">Kirim</button>
+</div>
+</div>
+<div style="margin-top: 12px">
+<label>Mempool (pending transactions):</label>
+<textarea
+id="mempool"
+rows="3"
+placeholder="Setiap transaksi di baris baru. Contoh: A -> B:10"
+></textarea>
+</div>
+<div style="margin-top: 12px">
+<button id="btn-mine-all">Mine Semua Transaksi</button>
+<button id="btn-verify-consensus">Verify</button>
+<button id="btn-consensus">Consensus</button>
+</div>
+<h3 style="margin-top: 20px">Blockchain Tiap User</h3>
+<div id="chains">
+<h4>Database User A</h4>
+<div id="chain-A" class="chain-row"></div>
+<h4>Database User B</h4>
+<div id="chain-B" class="chain-row"></div>
+<h4>Database User C</h4>
+<div id="chain-C" class="chain-row"></div>
+</div>
+</div>
+</div>
+<!-- END main-content -->
+
+<!-- Footer (Struktur tetap, gaya diubah di CSS) -->
+<footer>
+<div class="footer-content">
+<img src="PENSFIX.png" alt="Logo PENS" class="footer-logo" />
+<div class="footer-links">
+<p>
+Email:
+<a href="mailto:makhsanifatan@gmail.com">makhsanifatan@gmail.com</a>
+</p>
+<p>
+Website:
+<a href="https://www.pens.ac.id" target="_blank"
+>Profil Kampus</a
+>
+</p>
+</div>
+</div>
+</footer>
+
+<!-- elliptic library first, then app script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+<!-- Menggunakan file app.js (TIDAK BERUBAH) -->
+<script src="app.js"></script>
+</body>
+</html>
